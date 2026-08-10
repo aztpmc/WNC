@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="author" content="Abdulrahman Alzahrani">
+<meta name="description" content="Two offline, bilingual financial and trade documentation tools: a Numbers to Words Converter and a Trade Finance Reference. Built by Abdulrahman Alzahrani.">
+<title>Number & Trade Finance Tools</title>
+<link rel="icon" href="icons/landing.svg" type="image/svg+xml">
+<meta name="theme-color" content="#161616">
+<link rel="stylesheet" href="/src/styles/fonts.css">
+<link rel="stylesheet" href="/src/styles/tokens.css">
+<link rel="stylesheet" href="/src/styles/components.css">
+<link rel="stylesheet" href="/src/tools/landing/styles.css">
+</head>
+<body>
+
+<a href="#mainContent" class="skip-link" data-i18n="skipToContent">Skip to main content</a>
+<header class="topbar">
+  <h1 data-i18n="appTitle">Number & Trade Finance Tools</h1>
+  <div class="topbar-right">
+    <div class="credit">
+      <span data-i18n="footerBuilt">Built by Abdulrahman Alzahrani</span>
+      <span class="sep">|</span>
+      <a href="https://www.linkedin.com/in/abdulrahman-alzahrani-43713128b" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    </div>
+    <div class="seg" id="langSwitch" role="group" aria-label="Language">
+      <button type="button" id="langEn" aria-pressed="true" lang="en">EN</button>
+      <button type="button" id="langAr" aria-pressed="false" lang="ar">العربية</button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap" id="mainContent" tabindex="-1">
+  <section class="tile">
+    <h2 data-i18n="introTitle">Choose a Tool</h2>
+    <div class="tile-body">
+      <p class="intro-text" data-i18n="introText">Two offline, bilingual tools for financial and trade documentation.</p>
+
+      <div class="landing-grid">
+        <a class="landing-card" href="pages/numbers-to-words.html">
+          <h3 data-i18n="ntwTitle">Numbers to Words Converter</h3>
+          <p data-i18n="ntwDesc">Convert amounts into formal English and Arabic words.</p>
+          <span class="landing-card-cta" data-i18n="openTool">Open</span>
+        </a>
+        <a class="landing-card" href="pages/trade-finance-reference.html">
+          <h3 data-i18n="tfrTitle">Trade Finance Reference</h3>
+          <p data-i18n="tfrDesc">A bilingual reference and search tool for Incoterms, UCP 600, URDG 758, and ISBP 821.</p>
+          <span class="landing-card-cta" data-i18n="openTool">Open</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script type="module" src="/src/tools/landing/main.js"></script>
+</body>
+</html>

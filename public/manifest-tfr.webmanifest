@@ -1,0 +1,15 @@
+{
+  "name": "Trade Finance Reference",
+  "short_name": "Trade Finance Ref",
+  "description": "Offline bilingual reference for Incoterms 2020, UCP 600, URDG 758, and ISBP 821.",
+  "start_url": "pages/trade-finance-reference.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f4f4f4",
+  "theme_color": "#161616",
+  "lang": "en",
+  "dir": "ltr",
+  "icons": [
+    { "src": "icons/trade-finance-reference.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}

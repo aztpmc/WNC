@@ -1,0 +1,15 @@
+{
+  "name": "Numbers to Words Converter",
+  "short_name": "Numbers to Words",
+  "description": "Offline amount-in-words converter for English and Arabic financial documentation.",
+  "start_url": "pages/numbers-to-words.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f4f4f4",
+  "theme_color": "#161616",
+  "lang": "en",
+  "dir": "ltr",
+  "icons": [
+    { "src": "icons/numbers-to-words.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}

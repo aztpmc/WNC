@@ -1,0 +1,26 @@
+/* =========================================================================
+   Landing page -- page-specific styles. The shared base (reset, top bar,
+   tile, buttons) lives in src/styles/components.css; this file only has
+   the two-card tool picker grid, which nothing else needs.
+   ========================================================================= */
+.intro-text{color:var(--gray-70); margin:0 0 20px; line-height:1.5}
+
+.landing-grid{display:grid; grid-template-columns:1fr 1fr; gap:16px}
+
+.landing-card{
+  display:block; padding:20px; background:var(--gray-10);
+  border:1px solid var(--gray-20); border-inline-start:3px solid var(--blue-60);
+  color:inherit; text-decoration:none;
+}
+.landing-card:hover{background:var(--blue-10)}
+.landing-card h3{font-size:1.05rem; margin:0 0 8px}
+.landing-card p{color:var(--gray-70); font-size:.875rem; line-height:1.5; margin:0 0 14px}
+.landing-card-cta{font-size:.8rem; font-weight:600; color:var(--blue-60)}
+html[dir="rtl"] .landing-card{border-inline-start:1px solid var(--gray-20); border-inline-end:3px solid var(--blue-60)}
+
+@media (max-width:640px){
+  .landing-grid{grid-template-columns:1fr}
+  .topbar{padding:0 16px}
+  .topbar h1{font-size:1.05rem}
+  .wrap{padding:0 16px}
+}
