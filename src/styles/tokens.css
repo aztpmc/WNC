@@ -1,0 +1,18 @@
+/* =========================================================================
+   Design tokens -- Carbon Design System inspired (not IBM-branded).
+   Extracted verbatim from numbers-to-words.html. Shared by every tool page
+   so the whole product stays visually one coherent system.
+   ========================================================================= */
+:root{
+  --blue-60:#0f62fe; --blue-70:#0043ce; --blue-10:#edf5ff;
+  --gray-100:#161616; --gray-90:#262626; --gray-70:#525252; --gray-60:#6f6f6f;
+  --gray-30:#c6c6c6; --gray-20:#e0e0e0; --gray-10:#f4f4f4;
+  --white:#ffffff;
+  --green-60:#198038; --green-10:#defbe6;
+  --red-60:#da1e28; --red-10:#fff1f1;
+  --purple-60:#8a3ffc; --purple-10:#f6f2ff;
+  --teal-60:#007d79; --teal-10:#d9fbfb;
+  --focus:#0f62fe;
+  --font-en: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+  --font-ar: 'IBM Plex Sans Arabic', 'IBM Plex Sans', 'Segoe UI', Tahoma, Arial, sans-serif;
+}

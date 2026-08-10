@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="author" content="Abdulrahman Alzahrani">
+<meta name="description" content="Offline bilingual reference and search tool for Incoterms 2020, UCP 600, URDG 758, and an ISBP 821 topic index. Built by Abdulrahman Alzahrani.">
+<title>Trade Finance Reference</title>
+<link rel="stylesheet" href="/src/styles/fonts.css">
+<link rel="stylesheet" href="/src/styles/tokens.css">
+<link rel="stylesheet" href="/src/styles/components.css">
+<link rel="stylesheet" href="/src/tools/trade-finance-reference/styles.css">
+</head>
+<body>
+
+<header class="topbar">
+  <h1 data-i18n="appTitle">Trade Finance Reference</h1>
+  <div class="topbar-right">
+    <div class="credit">
+      <span data-i18n="footerBuilt">Built by Abdulrahman Alzahrani</span>
+      <span class="sep">|</span>
+      <a href="https://www.linkedin.com/in/abdulrahman-alzahrani-43713128b" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    </div>
+    <div class="seg" id="langSwitch" role="group" aria-label="Language">
+      <button type="button" id="langEn" aria-pressed="true" lang="en">EN</button>
+      <button type="button" id="langAr" aria-pressed="false" lang="ar">العربية</button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="tile" aria-labelledby="searchHeading">
+    <h2 id="searchHeading" data-i18n="sectionSearch">Search</h2>
+    <div class="tile-body">
+      <div class="field">
+        <label for="q" data-i18n="labelSearch">Ask a question or search a topic</label>
+        <input id="q" type="search" autocomplete="off" spellcheck="false" aria-describedby="searchHint">
+        <span class="hint" id="searchHint" data-i18n="hintSearch">Try an article number ("UCP 30", "Article 20"), a rule code ("FOB"), or a plain question ("who pays for insurance under CIF").</span>
+      </div>
+      <div class="chips" id="chips" role="group" aria-label="Filter by source"></div>
+    </div>
+  </section>
+
+  <section class="tile" aria-labelledby="resultsHeading">
+    <h2 id="resultsHeading" data-i18n="sectionResults">Results</h2>
+    <div class="tile-body">
+      <p class="result-count" id="resultCount" role="status" aria-live="polite"></p>
+      <ul class="result-list" id="resultList"></ul>
+      <p class="empty-state" id="emptyState" hidden data-i18n="emptyState">No matches. Try different words, or clear the search to browse everything.</p>
+    </div>
+  </section>
+
+  <section class="tile" id="matrixSection" aria-labelledby="matrixHeading">
+    <h2 id="matrixHeading" data-i18n="sectionMatrix">Incoterms® 2020 Responsibility Chart</h2>
+    <div class="tile-body">
+      <p class="hint" id="matrixHint" data-i18n="matrixHint">Who pays for what, under each rule. Click a rule's code to highlight its column. Scroll sideways on narrow screens.</p>
+      <div class="chips" id="matrixChips" role="group" aria-label="Highlight a rule"></div>
+      <div class="matrix-scroll">
+        <table class="matrix-table" id="matrixTable"></table>
+      </div>
+      <p class="matrix-legend" id="matrixLegend"></p>
+      <p class="matrix-note" id="matrixNote" data-i18n="matrixNote">This chart is an original compilation of publicly known Incoterms® 2020 cost/risk allocations, cross-checked against a secondary published reference. It is not affiliated with, and does not reproduce, any third party's copyrighted chart design. Always verify against the official ICC Incoterms® 2020 publication.</p>
+    </div>
+  </section>
+
+  <section class="tile" aria-labelledby="aboutHeading">
+    <h2 id="aboutHeading" data-i18n="sectionAbout">About this reference</h2>
+    <div class="tile-body disclaimer" id="aboutBody" data-i18n="aboutBody">
+      <p>This tool provides original, plain-language summaries of Incoterms&reg; 2020, ICC Uniform Customs and Practice for Documentary Credits (UCP 600), and ICC Uniform Rules for Demand Guarantees (URDG 758), plus a topic-level index of ICC International Standard Banking Practice (ISBP 821) — it does not reproduce ICC's copyrighted rule text. It is offline, works entirely in your browser, and sends no data anywhere.</p>
+      <p>These summaries are a study and orientation aid, not legal advice and not a substitute for the official ICC publications. Always verify the exact wording of the applicable rule against the current official ICC text before relying on it for a live transaction, guarantee, or letter of credit.</p>
+    </div>
+  </section>
+
+</main>
+
+<script type="module" src="/src/tools/trade-finance-reference/main.js"></script>
+</body>
+</html>
