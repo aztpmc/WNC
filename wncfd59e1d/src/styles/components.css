@@ -1,0 +1,103 @@
+/* =========================================================================
+   Shared component base styles -- reset, top bar, tile, form controls,
+   buttons, error message. Extracted from numbers-to-words.html (verified
+   identical, or the shared subset of, trade-finance-reference.html's
+   equivalent rules). Tool-specific styles (results/words panels, the
+   Incoterms matrix table, search chips, etc.) stay in each tool's own
+   stylesheet -- only genuinely reused rules live here.
+   ========================================================================= */
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--gray-10); color:var(--gray-100);
+  font-family:var(--font-en); font-size:14px; line-height:1.43; -webkit-text-size-adjust:100%;
+}
+/* Latin text stays on IBM Plex Sans and Arabic text on IBM Plex Sans Arabic
+   regardless of which direction the surrounding UI is set to — dir="ltr"/
+   "rtl" marks script, not just layout, on the numeric line and each result
+   box, so English words in an Arabic-language screen (and vice versa)
+   render in the correct paired typeface rather than switching wholesale
+   with the interface language. */
+[dir="rtl"]{font-family:var(--font-ar)}
+[dir="ltr"]{font-family:var(--font-en)}
+h1,h2,h3{margin:0; font-weight:600}
+:focus-visible{outline:2px solid var(--focus); outline-offset:0}
+
+/* ---------- Top bar ---------- */
+.topbar{
+  position:sticky; top:0; z-index:100;
+  background:var(--gray-100); color:var(--white);
+  display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:6px 20px;
+  padding:0 24px; min-height:48px; border-bottom:1px solid #000;
+}
+.topbar h1{font-size:1.35rem; font-weight:600; padding:12px 0}
+.topbar-right{display:flex; align-items:center; flex-wrap:wrap; gap:16px 20px; padding:8px 0}
+.topbar .credit{
+  font-size:.8rem; color:var(--gray-30); display:flex; align-items:center; gap:8px;
+}
+.topbar .credit a{color:var(--white); text-decoration:none; border-bottom:1px solid var(--gray-60)}
+.topbar .credit a:hover{border-bottom-color:var(--white)}
+.topbar .credit .sep{color:var(--gray-70)}
+
+/* Compact Carbon-style language switcher, always visible in the top bar */
+.topbar .seg{display:inline-flex; border:1px solid var(--gray-70)}
+.topbar .seg button{
+  border:0; border-radius:0; padding:0 14px; height:32px; font-size:.8rem; font-weight:600;
+  background:transparent; color:var(--gray-30); cursor:pointer;
+}
+.topbar .seg button + button{border-inline-start:1px solid var(--gray-70)}
+.topbar .seg button:hover{background:rgba(255,255,255,.08); color:var(--white)}
+.topbar .seg button[aria-pressed="true"]{background:var(--white); color:var(--gray-100)}
+.topbar .seg button[aria-pressed="true"]:hover{background:var(--white); color:var(--gray-100)}
+.topbar .seg button:focus-visible{outline:2px solid var(--white); outline-offset:-2px}
+
+/* ---------- Layout ---------- */
+.wrap{max-width:960px; margin:0 auto; padding:0 24px}
+main{padding:24px 0 48px}
+
+/* ---------- Tile ---------- */
+.tile{background:var(--white); border:1px solid var(--gray-20); margin-bottom:16px}
+.tile > h2{
+  font-size:1.125rem; color:var(--gray-100); font-weight:600;
+  padding:14px 20px; border-bottom:1px solid var(--gray-20);
+}
+html[dir="rtl"] .tile > h2{font-size:1.2rem}
+.tile-body{padding:20px}
+
+/* ---------- Form ---------- */
+.field{display:flex; flex-direction:column; min-width:0}
+label,.lbl{font-size:.875rem; font-weight:600; color:var(--gray-70); margin-bottom:6px; letter-spacing:.01em}
+
+input,select{
+  font:inherit; color:var(--gray-100); background:var(--gray-10);
+  border:none; border-bottom:1px solid var(--gray-60); border-radius:0;
+  padding:11px 12px; width:100%; height:44px;
+}
+input:hover,select:hover{background:#e8e8e8}
+input:focus,select:focus{
+  outline:2px solid var(--focus); outline-offset:-2px; background:var(--white);
+}
+select{cursor:pointer; appearance:none;
+  background-image:url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath fill='%23161616' d='M8 11 3 6l.7-.7L8 9.6l4.3-4.3.7.7z'/%3E%3C/svg%3E");
+  background-repeat:no-repeat; background-position:right 12px center; padding-inline-end:36px;
+}
+html[dir="rtl"] select{background-position:left 12px center}
+.hint{font-size:.75rem; color:var(--gray-60); margin-top:6px}
+.actions{display:flex; flex-wrap:wrap; gap:8px; margin-top:16px}
+
+button{
+  font:inherit; font-weight:400; font-size:.875rem; cursor:pointer;
+  border:1px solid var(--gray-100); background:var(--white); color:var(--gray-100);
+  border-radius:0; padding:0 16px; height:40px;
+}
+button:hover{background:var(--gray-10)}
+.btn-primary{background:var(--blue-60); border-color:var(--blue-60); color:var(--white)}
+.btn-primary:hover{background:var(--blue-70); border-color:var(--blue-70)}
+.btn-sm{padding:0 12px; font-size:.8rem; height:32px}
+
+/* ---------- Messages ---------- */
+.error{
+  display:none; margin-top:14px; padding:12px 14px; border-radius:0;
+  background:var(--red-10); border-inline-start:3px solid var(--red-60); color:var(--gray-100); font-size:.85rem;
+}
+.error.show{display:block}
